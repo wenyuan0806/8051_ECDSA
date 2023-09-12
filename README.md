@@ -37,7 +37,7 @@ You can use the `makekeys` program in the `apps` directory to generate keys (on 
 
 I recommend just copying (or symlink) ecc.h and ecc.c into your project. Then just `#include "nECC.h"` to use the nano-ecc functions.
 
-See ecc.h for documentation for each function.
+See `nECC.h` for documentation for each function.
 
 Speed and Size
 --------------
