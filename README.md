@@ -13,11 +13,15 @@ Features
  * Small code size: ECDH in as little as 6KB, ECDH + ECDSA in as little as 7KB
  * No dynamic memory allocation.
  * Reasonably fast: on an ATmega328P at 16MHz (AVR, 2-cycle 8x8 bit multiply), 192-bit ECDH shared secret calculation takes about 4034ms
- * Support for 4 standard curves: secp128r1, secp192r1, secp256r1, and secp384r1
+ * Support for 5 standard curves: secp128r1, secp192r1, secp224r1, secp256r1, and secp384r1
  * BSD 2-clause license.
 
 Usage Notes
 -----------
+
+#### Recommended Elliptic Curve Domain Parameters ####
+
+This project uses the recommanded elliptic curve domain parameters at commonly required security levels for use by implementers of SEC 1 and other ECC standards like ANSI X9.62, ANSI X9.63, and IEEE 1363 and IEEE 1363a.
 
 #### Integer Representation ####
 
@@ -31,7 +35,7 @@ You can use the `makekeys` program in the `apps` directory to generate keys (on 
 
 #### Using the Code ####
 
-I recommend just copying (or symlink) ecc.h and ecc.c into your project. Then just `#include "ecc.h"` to use the nano-ecc functions.
+I recommend just copying (or symlink) ecc.h and ecc.c into your project. Then just `#include "nECC.h"` to use the nano-ecc functions.
 
 See ecc.h for documentation for each function.
 
@@ -39,8 +43,9 @@ Speed and Size
 --------------
 
 Available optimizations are:
- * `ECC_ENABLE_DSA` - Set to 0 to avoid including any DSA-related code.
+ * `ECC_KEYGEN` - Set 1 to enable ecdsa make key code section or set 0 to disable for saving code size.
+ * `ECC_SIGN` - Set 1 to enable ecdsa sign code section or set 0 to disable for saving code size.
+ * `ECC_VERIFY` - Set 1 to enable ecdsa verify code section or set 0 to disable for saving code size.
  * `ECC_SQUARE_FUNC` - Use a separate function for squaring.
- * `ECC_ASM` - Choose the type of inline assembly to use. Currently only `ecc_asm_none` is available. In the near future we plan to provide `ecc_asm_avr` and `ecc_asm_8051`.
 
 Comprehensive code size and performance analysis are forthcoming.

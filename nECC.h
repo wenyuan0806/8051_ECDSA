@@ -1,8 +1,8 @@
 #ifndef _MICRO_ECC_H_
 #define _MICRO_ECC_H_
 
-#define ECC_KEYGEN 1
-#define ECC_SIGN 1
+#define ECC_KEYGEN 0
+#define ECC_SIGN 0
 #define ECC_VERIFY 1
 #define ECC_SQUARE_FUNC 1
 
@@ -18,13 +18,14 @@ typedef long int32_t;
 /* Curve selection options. */
 #define secp128r1 16
 #define secp192r1 24
+#define secp224r1 28
 #define secp256r1 32
 #define secp384r1 48
 #ifndef ECC_CURVE
-#define ECC_CURVE secp256r1
+#define ECC_CURVE secp224r1
 #endif
 
-#if (ECC_CURVE != secp128r1 && ECC_CURVE != secp192r1 && ECC_CURVE != secp256r1 && ECC_CURVE != secp384r1)
+#if (ECC_CURVE != secp128r1 && ECC_CURVE != secp192r1 && ECC_CURVE != secp224r1 && ECC_CURVE != secp256r1 && ECC_CURVE != secp384r1)
 #error "Must define ECC_CURVE to one of the available curves"
 #endif
 
