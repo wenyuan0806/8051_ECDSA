@@ -1,7 +1,7 @@
 nano-ecc
 ========
 
-A very small ECDH and ECDSA implementation for 8-bit microcontrollers.
+A very small ECDH and ECDSA implementation for 8-bit microcontrollers (8051).
 
 Based on kmackay's micro-ecc, a small ECDH and ECDSA implementation for 32-bit microcontrollers. For more information see https://github.com/kmackay/micro-ecc
 
