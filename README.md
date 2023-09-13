@@ -15,6 +15,7 @@ Features
  * Reasonably fast: on an ATmega328P at 16MHz (AVR, 2-cycle 8x8 bit multiply), 192-bit ECDH shared secret calculation takes about 4034ms
  * Support for 5 standard curves: secp128r1, secp192r1, secp224r1, secp256r1, and secp384r1
  * BSD 2-clause license.
+ * Support C51 platform such as 8051 mcu.
 
 Usage Notes
 -----------
